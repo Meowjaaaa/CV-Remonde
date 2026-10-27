@@ -4,111 +4,394 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kervin P. Remonde — CV</title>
+  <meta name="description" content="Kervin P. Remonde — BSIT student and UI/UX – Front End Specialist from Panabo City, Davao del Norte.">
+  <meta property="og:title" content="Kervin P. Remonde — CV">
+  <meta property="og:description" content="UI/UX – Front End Specialist and fourth-year BSIT student at Davao del Norte State College.">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/211181264?v=4">
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/211181264?s=64&v=4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>
+    // Apply saved theme before paint to avoid a flash
+    document.documentElement.classList.add("js");
+    try {
+      var t = localStorage.getItem("theme");
+      if (t) document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
 </head>
 <body>
   <div class="bg-shape one" aria-hidden="true"></div>
   <div class="bg-shape two" aria-hidden="true"></div>
+  <div class="progress-bar" aria-hidden="true"></div>
 
-  <main class="cv">
+  <!-- Navigation -->
+  <header class="nav" id="top">
+    <div class="nav-inner">
+      <a href="#home" class="brand" aria-label="Back to top">KR<span>.</span></a>
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="photo-ring">
-        <img class="avatar" src="https://avatars.githubusercontent.com/u/211181264?v=4" alt="Photo of Kervin P. Remonde">
+      <nav class="nav-links" id="nav-links" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#github">GitHub</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+          <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-15a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1zm0 18a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zM4.2 4.2a1 1 0 0 1 1.4 0l.7.7a1 1 0 1 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zm13.5 13.5a1 1 0 0 1 1.4 0l.7.7a1 1 0 1 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zM2 12a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1zm18 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1zM4.2 19.8a1 1 0 0 1 0-1.4l.7-.7a1 1 0 1 1 1.4 1.4l-.7.7a1 1 0 0 1-1.4 0zM17.7 6.3a1 1 0 0 1 0-1.4l.7-.7a1 1 0 1 1 1.4 1.4l-.7.7a1 1 0 0 1-1.4 0z"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-      <h1>Kervin P. Remonde</h1>
-      <p class="role">UI/UX – Front End Specialist</p>
+    </div>
+  </header>
 
-      <div class="side-block">
-        <h2>Contact</h2>
-        <ul class="contact">
-          <li>
-            <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M14 9V7c0-.8.5-1 1-1h2V2h-3c-3 0-4 2-4 4.5V9H8v4h2v9h4v-9h3l1-4h-4z"/></svg>
-            </span>
-            <div>
-              <span class="label">Facebook</span>
-              <span>Kervin Remonde</span>
+  <main>
+
+    <!-- 1. Personal Profile -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow reveal">Hello, I'm</p>
+          <h1 class="reveal">Kervin P. Remonde</h1>
+          <p class="hero-role reveal">
+            <span class="typed" id="typed" aria-live="polite">UI/UX – Front End Specialist</span><span class="caret" aria-hidden="true"></span>
+          </p>
+          <p class="hero-intro reveal">
+            Fourth-year BSIT student at Davao del Norte State College. I focus on the front end,
+            creating innovative designs and reasoning through every possible user when I plan a UI/UX design.
+          </p>
+          <div class="hero-cta reveal">
+            <a href="#projects" class="btn primary">View my work</a>
+            <a href="#contact" class="btn ghost">Get in touch</a>
+          </div>
+          <ul class="hero-social reveal" aria-label="Social links">
+            <li><a href="https://github.com/Meowjaaaa" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>
+            </a></li>
+            <li><a href="https://www.facebook.com/kervin.postrero" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 9V7c0-.8.5-1 1-1h2V2h-3c-3 0-4 2-4 4.5V9H8v4h2v9h4v-9h3l1-4h-4z"/></svg>
+            </a></li>
+            <li><a href="mailto:Remonde.kervin@dnsc.edu.ph" aria-label="Email">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a></li>
+          </ul>
+        </div>
+
+        <div class="hero-photo reveal">
+          <div class="photo-ring">
+            <img class="avatar" src="https://avatars.githubusercontent.com/u/211181264?v=4" alt="Photo of Kervin P. Remonde" width="300" height="300">
+          </div>
+          <span class="badge badge-a">BSIT · 4th Year</span>
+          <span class="badge badge-b">UI/UX + Front End</span>
+        </div>
+      </div>
+      <a href="#about" class="scroll-hint" aria-label="Scroll to About">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- 2. About + Career Objective + Basic Information -->
+    <section class="section" id="about">
+      <div class="container">
+        <p class="eyebrow reveal">Get to know me</p>
+        <h2 class="section-title reveal">About Me</h2>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p class="reveal">
+              I'm a fourth-year Bachelor of Science in Information Technology student who enjoys turning ideas into
+              clean, usable interfaces. I like thinking from the user's side first: who will use the screen, what
+              they need, and what could confuse them. Then I build it on the front end.
+            </p>
+            <p class="reveal">
+              Outside of design and code, I bring experience in digital marketing and negotiation, I communicate
+              clearly, adapt quickly to new environments, and stay steady under pressure.
+            </p>
+
+            <div class="objective card reveal">
+              <h3>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6zm0 10a4 4 0 1 1 4-4 4 4 0 0 1-4 4zm0-6a2 2 0 1 0 2 2 2 2 0 0 0-2-2z"/></svg>
+                Career Objective
+              </h3>
+              <p>
+                To secure an internship or entry-level role as a UI/UX or Front End Developer where I can design
+                user-centered interfaces, grow my technical skills, and contribute to a team that builds products
+                people enjoy using.
+              </p>
+            </div>
+          </div>
+
+          <aside class="info card reveal" aria-label="Basic information">
+            <h3>Basic Information</h3>
+            <ul class="info-list">
+              <li>
+                <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z"/></svg></span>
+                <div><span class="label">Location</span><span>Panabo City, Davao del Norte</span></div>
+              </li>
+              <li>
+                <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
+                <div><span class="label">Email</span><a href="mailto:Remonde.kervin@dnsc.edu.ph">Remonde.kervin@dnsc.edu.ph</a></div>
+              </li>
+              <li>
+                <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></span>
+                <div><span class="label">Contact No.</span><a href="tel:09218735817">0921 873 5817</a></div>
+              </li>
+              <li>
+                <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zm-7 9.2v4L12 20l7-3.8v-4L12 16l-7-3.8z"/></svg></span>
+                <div><span class="label">Program</span><span>BS Information Technology</span></div>
+              </li>
+            </ul>
+
+            <h4>Career Interests</h4>
+            <ul class="tags">
+              <li>UI/UX Design</li>
+              <li>Front End Development</li>
+              <li>Web Design</li>
+              <li>Digital Marketing</li>
+              <li>User Research</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Education -->
+    <section class="section alt" id="education">
+      <div class="container">
+        <p class="eyebrow reveal">Where I studied</p>
+        <h2 class="section-title reveal">Education</h2>
+
+        <ol class="timeline">
+          <li class="tl-item current reveal">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <div class="tl-card">
+              <span class="level">College · Currently enrolled</span>
+              <h3>Davao del Norte State College</h3>
+              <p>Bachelor of Science in Information Technology</p>
+              <span class="years">4th Year · BSIT C</span>
             </div>
           </li>
-          <li>
-            <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
-            </span>
-            <div>
-              <span class="label">Contact No.</span>
-              <a href="tel:09218735817">09218735817</a>
+          <li class="tl-item reveal">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <div class="tl-card">
+              <span class="level">Senior High School</span>
+              <h3>Maryknoll College of Panabo Inc.</h3>
+              <span class="years">2020 – 2022</span>
             </div>
           </li>
-          <li>
-            <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            </span>
-            <div>
-              <span class="label">Email</span>
-              <a href="mailto:Remonde.kervin@dnsc.edu.ph">Remonde.kervin@dnsc.edu.ph</a>
+          <li class="tl-item reveal">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <div class="tl-card">
+              <span class="level">High School</span>
+              <h3>North Davao Colleges Inc.</h3>
+              <span class="years">2016 – 2020</span>
             </div>
           </li>
-        </ul>
-      </div>
-
-      <div class="side-block">
-        <h2>Skills</h2>
-        <ul class="skills">
-          <li>Digital Marketing</li>
-          <li>Negotiation Skills</li>
-          <li>Excellent Communication Skills</li>
-          <li>Able to adapt and adjust to the environment</li>
-          <li>Ability to work under pressure</li>
-        </ul>
-      </div>
-    </aside>
-
-    <!-- Main content -->
-    <div class="content">
-
-      <section class="section">
-        <h2 class="section-title">Profile</h2>
-        <p class="about">
-          Fourth-year BSIT student at Davao Del Norte State College. Focused on front end,
-          creating innovative designs. Reasoning out every possible user for UI/UX designs.
-        </p>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">Education</h2>
-        <ol class="edu">
-          <li class="edu-card current">
-            <span class="level">College</span>
-            <h3>Davao Del Norte State College</h3>
-          </li>
-          <li class="edu-card">
-            <span class="level">Senior High School</span>
-            <h3>Maryknoll College of Panabo Inc.</h3>
-            <span class="years">2020 – 2022</span>
-          </li>
-          <li class="edu-card">
-            <span class="level">High School</span>
-            <h3>North Davao Colleges Inc.</h3>
-            <span class="years">2016 – 2020</span>
-          </li>
-          <li class="edu-card">
-            <span class="level">Elementary</span>
-            <h3>Gredu Elementary School</h3>
-            <span class="years">2010 – 2016</span>
+          <li class="tl-item reveal">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <div class="tl-card">
+              <span class="level">Elementary</span>
+              <h3>Gredu Elementary School</h3>
+              <span class="years">2010 – 2016</span>
+            </div>
           </li>
         </ol>
-      </section>
+      </div>
+    </section>
 
-    </div>
+    <!-- 4. Skills -->
+    <section class="section" id="skills">
+      <div class="container">
+        <p class="eyebrow reveal">What I can do</p>
+        <h2 class="section-title reveal">Skills</h2>
+
+        <div class="skills-grid">
+          <div class="card reveal">
+            <h3 class="card-title">Technical Skills</h3>
+            <ul class="bars">
+              <li><div class="bar-head"><span>HTML</span><span class="pct">85%</span></div><div class="bar"><span style="--w:85%"></span></div></li>
+              <li><div class="bar-head"><span>CSS</span><span class="pct">80%</span></div><div class="bar"><span style="--w:80%"></span></div></li>
+              <li><div class="bar-head"><span>UI/UX Design</span><span class="pct">80%</span></div><div class="bar"><span style="--w:80%"></span></div></li>
+              <li><div class="bar-head"><span>JavaScript</span><span class="pct">60%</span></div><div class="bar"><span style="--w:60%"></span></div></li>
+              <li><div class="bar-head"><span>Git &amp; GitHub</span><span class="pct">65%</span></div><div class="bar"><span style="--w:65%"></span></div></li>
+            </ul>
+          </div>
+
+          <div class="card reveal">
+            <h3 class="card-title">Tools &amp; Technologies</h3>
+            <ul class="tool-grid">
+              <li><span class="tool-ic">&lt;/&gt;</span>HTML5</li>
+              <li><span class="tool-ic">#</span>CSS3</li>
+              <li><span class="tool-ic">JS</span>JavaScript</li>
+              <li><span class="tool-ic">Fg</span>Figma</li>
+              <li><span class="tool-ic">Git</span>Git</li>
+              <li><span class="tool-ic">GH</span>GitHub</li>
+              <li><span class="tool-ic">VS</span>VS Code</li>
+              <li><span class="tool-ic">▲</span>Vercel</li>
+            </ul>
+          </div>
+
+          <div class="card reveal wide">
+            <h3 class="card-title">Professional Skills</h3>
+            <ul class="soft">
+              <li><strong>Digital Marketing</strong><span>Promoting products and ideas online to the right audience.</span></li>
+              <li><strong>Negotiation</strong><span>Finding agreements that work for both sides.</span></li>
+              <li><strong>Communication</strong><span>Explaining ideas clearly to teammates and clients.</span></li>
+              <li><strong>Adaptability</strong><span>Adjusting quickly to new people, tools, and settings.</span></li>
+              <li><strong>Working Under Pressure</strong><span>Staying calm and focused on tight deadlines.</span></li>
+              <li><strong>Teamwork &amp; Problem Solving</strong><span>Working with others to break problems down and fix them.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Projects -->
+    <section class="section alt" id="projects">
+      <div class="container">
+        <p class="eyebrow reveal">What I've built</p>
+        <h2 class="section-title reveal">Projects</h2>
+
+        <article class="project card reveal">
+          <div class="project-preview" aria-hidden="true">
+            <div class="browser">
+              <div class="browser-bar"><i></i><i></i><i></i><span>cv-remonde.vercel.app</span></div>
+              <div class="mock">
+                <div class="mock-nav"><b></b><em></em><em></em><em></em></div>
+                <div class="mock-hero">
+                  <div class="mock-lines"><b></b><u></u><s></s><s></s><span></span></div>
+                  <img src="https://avatars.githubusercontent.com/u/211181264?s=160&v=4" alt="">
+                </div>
+                <div class="mock-cards"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="level">Web Development · 2026</span>
+            <h3>Personal CV Website</h3>
+            <p>
+              The site you're on right now. A responsive, single-page CV that presents my profile, education,
+              skills, and projects. It has a light and dark theme, scroll animations, a mobile menu, and live data
+              pulled from the GitHub API.
+            </p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>GitHub API</li>
+              <li>Vercel</li>
+            </ul>
+            <div class="project-links">
+              <a class="btn primary small" href="https://github.com/Meowjaaaa/CV-Remonde" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>
+                Source code
+              </a>
+              <a class="btn ghost small" href="#home">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v2h3.6l-9.8 9.8 1.4 1.4L19 6.4V10h2V3h-7zm5 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg>
+                Live demo
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 6. GitHub Profile -->
+    <section class="section" id="github">
+      <div class="container">
+        <p class="eyebrow reveal">Where I code</p>
+        <h2 class="section-title reveal">GitHub Profile</h2>
+
+        <div class="gh card reveal">
+          <div class="gh-head">
+            <img class="gh-avatar" src="https://avatars.githubusercontent.com/u/211181264?s=120&v=4" alt="" width="64" height="64">
+            <div>
+              <h3 id="gh-name">Kervin Remonde</h3>
+              <a href="https://github.com/Meowjaaaa" target="_blank" rel="noopener" class="gh-user">@Meowjaaaa</a>
+              <p class="gh-bio" id="gh-bio">Dont rest go play</p>
+            </div>
+            <a href="https://github.com/Meowjaaaa" target="_blank" rel="noopener" class="btn primary small gh-follow">Visit GitHub</a>
+          </div>
+
+          <ul class="gh-stats">
+            <li><strong id="gh-repos">1</strong><span>Public repos</span></li>
+            <li><strong id="gh-followers">0</strong><span>Followers</span></li>
+            <li><strong id="gh-following">1</strong><span>Following</span></li>
+            <li><strong id="gh-since">2025</strong><span>Member since</span></li>
+          </ul>
+
+          <h4>Featured repository</h4>
+          <a class="repo" href="https://github.com/Meowjaaaa/CV-Remonde" target="_blank" rel="noopener">
+            <div>
+              <strong>
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.71 1.71.75.75 0 0 1-1.06 1.06A2.5 2.5 0 0 1 2 11.5v-9zm10.5-1h-8a1 1 0 0 0-1 1v6.71A2.5 2.5 0 0 1 4.5 9h8V1.5z"/></svg>
+                CV-Remonde
+              </strong>
+              <span>My personal CV website, built with HTML, CSS, and JavaScript.</span>
+            </div>
+            <span class="lang"><i></i>CSS</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 & 8. Contact + Social Links -->
+    <section class="section alt" id="contact">
+      <div class="container">
+        <p class="eyebrow reveal">Let's connect</p>
+        <h2 class="section-title reveal">Contact &amp; Socials</h2>
+        <p class="lead reveal">
+          Open to internship, freelance, and entry-level opportunities in UI/UX and front end development.
+          The quickest way to reach me is by email.
+        </p>
+
+        <div class="social-grid">
+          <a class="social card reveal" href="mailto:Remonde.kervin@dnsc.edu.ph">
+            <span class="social-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
+            <strong>Email</strong>
+            <span>Remonde.kervin@dnsc.edu.ph</span>
+          </a>
+          <a class="social card reveal" href="https://github.com/Meowjaaaa" target="_blank" rel="noopener">
+            <span class="social-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg></span>
+            <strong>GitHub</strong>
+            <span>@Meowjaaaa</span>
+          </a>
+          <a class="social card reveal" href="https://www.facebook.com/kervin.postrero" target="_blank" rel="noopener">
+            <span class="social-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 9V7c0-.8.5-1 1-1h2V2h-3c-3 0-4 2-4 4.5V9H8v4h2v9h4v-9h3l1-4h-4z"/></svg></span>
+            <strong>Facebook</strong>
+            <span>Kervin Remonde</span>
+          </a>
+          <a class="social card reveal" href="tel:09218735817">
+            <span class="social-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></span>
+            <strong>Phone</strong>
+            <span>0921 873 5817</span>
+          </a>
+        </div>
+
+        <div class="copy-row reveal">
+          <button class="btn primary" id="copy-email" type="button">Copy email address</button>
+          <span class="toast" id="toast" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
-    <p>&copy; 2026 Kervin P. Remonde</p>
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Kervin P. Remonde · Built with HTML, CSS &amp; JavaScript</p>
+      <a href="#home" class="to-top">Back to top ↑</a>
+    </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
